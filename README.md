@@ -1,2 +1,2 @@
 # gxldCptRick
-a small summary of skills
+a small summary of my coding abilities
