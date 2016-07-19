@@ -1,18 +1,29 @@
-nav ul li main header h1 h2 body{
+nav, ul, li, main, header, h1, h2, body{
     margin: 0;
     border: 0;
     padding: 0;
-    font-style: none;
+    font-style: italic;
+    text-decoration: none;
+    text-align: none;
 }
 body {
     background-image: url(backgroundImage/homebackground.png);
-    background-color: #ff0099;
+    background-color: #ff0099;\
+    text-align: center;
 }
-header h1 {
-    background-image: url(backgroundImage/headerbackground.png);
-    background-position: top;
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+header h2 {
+    text-align: center;
+    font-size: 40px;
+}
+nav {
+    text-align: center;
 }
 nav ul {
+    text-align: center;
     background: #5599ff url(backgroundImage/navBackground.png);
     list-style: none;
     display: inline;
@@ -22,9 +33,20 @@ nav li {
     display: inline;
 }
 nav a {
+    font-size: 20px;
     color: #223300;
     text-decoration: none;
 }
 nav a:visited {
-    color: #223300
+    color: #223300;
+}
+main p {
+    text-align: center;
+    font-size: 30px;
+}
+main img {
+    float: left;
+}
+.hidden {
+    opacity: 0;
 }
