@@ -7,7 +7,7 @@ nav, ul, li, main, header, h1, h2, body{
     text-align: none;
 }
 body {
-    background-image: url(backgroundImage/homebackground.png);
+    background-image: url(../images/backgroundImage/homebackground.png);
     background-color: #ff0099;
     text-align: center;
 }
@@ -24,7 +24,7 @@ nav {
 }
 nav ul {
     text-align: center;
-    background: #5599ff url(backgroundImage/navBackground.png);
+    background: #5599ff url(../images/backgroundImage/navBackground.png);
     list-style: none;
     display: inline;
 }
@@ -44,7 +44,7 @@ main p {
     text-align: left;
     font-size: 30px;
 }
-main img {
+main canvas {
     float: left;
 }
 .hidden {
