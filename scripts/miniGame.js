@@ -6,7 +6,7 @@ var canvas = document.getElementById("stuff"),
         size: 50
     },
     interval,
-    speed = 1,
+    speed = 10,
     up = false,
     down = false,
     left = false,
