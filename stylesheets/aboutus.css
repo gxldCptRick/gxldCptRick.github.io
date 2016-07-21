@@ -1,3 +1,8 @@
 main p {
     text-align: center;
 }
+main canvas {
+    display: inline;
+    text-align: center;
+    margin: 30px 335px;
+}
