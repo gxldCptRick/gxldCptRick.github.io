@@ -1,8 +1,8 @@
 main p {
     text-align: center;
+    display:inline;
 }
 main canvas {
-    display: inline;
-    text-align: center;
-    margin: 30px 335px;
+    display:inline;
+    background-image: url(../images/backgroundImage/gameBackground.png);
 }
