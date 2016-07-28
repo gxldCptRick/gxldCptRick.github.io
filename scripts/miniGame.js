@@ -26,8 +26,8 @@ function Enemy(x, y){
     this.speed = 2;
 };
 function timer(){
-    if(seconds === 60){
-        if(minutes === 60){
+    if(seconds === 59){
+        if(minutes === 59){
             hours++;
             minutes = 0;
         }
@@ -159,14 +159,6 @@ function drawEnemy(listOfEnemy){
         listOfEnemy[i].drawMe();
     }
 }
-function checkForBadTouch (){
-    oscar.badTouch(mike);
-    oscar.badTouch(charlie);
-    oscar.badTouch(echo);
-    mike.badtouch(charlie);
-    mike.badTouch(echo);
-    charlie.badTouch(echo);
-}
 var oscar = new Enemy(40, 40),
     mike = new Enemy(1240,550),
     charlie = new Enemy(1240, 40),
@@ -175,7 +167,6 @@ var oscar = new Enemy(40, 40),
 function draw () {
         checkSquareMan();
         drawEnemy(enemys);
-        checkForBadTouch();
 }
 gameInterval = setInterval(draw, 1);
 timerInterval = setInterval(timer, 1000);
