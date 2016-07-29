@@ -1,8 +1,0 @@
-main p {
-    text-align: center;
-    display:inline;
-}
-main canvas {
-    display:inline;
-    background-image: url(../images/backgroundImage/gameBackground.png);
-}
