@@ -1,0 +1,7 @@
+canvas {
+    background-image: url('../images/backgroundImage/gameBackground.png');
+}
+#timer {
+    font-family: fantasy;
+    font-size: 20px;
+}

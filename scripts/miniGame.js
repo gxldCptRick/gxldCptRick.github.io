@@ -18,7 +18,8 @@ var canvas = document.getElementById("stuff"),
     time,
     seconds = 0,
     minutes = 0, 
-    hours = 0;
+    hours = 0,
+    collision = false;
 function Enemy(x, y){
     this.xPos = x;
     this.yPos = y;
@@ -56,6 +57,11 @@ function drawSquareMan(){
         context.fillStyle = "#000";
         context.fill();
         context.closePath();
+};
+Enemy.prototype.collisionTest = function(square){
+    if(this.xPos >= square.xPos && (this.xPos <=  (square.xPos + square.size)) && this.yPos >= square.yPos && (this.yPos <= (square.yPos + square.size))){
+        collision = true;
+    }
 };
 Enemy.prototype.drawMe = function(){
         context.beginPath();
@@ -113,11 +119,24 @@ function checkSquareMan(){
 Enemy.prototype.followTheMan = function(squareMan){
     if(this.xPos > squareMan.xPos){
         if(this.yPos > squareMan.yPos){
+            if((squareMan.yPos - this.yPos) >= 200){
+                this.yPos -= this.speed * 2;
+            } 
+            else
             this.yPos-= this.speed;
         }
         else {
+            if((this.yPos - squareMan.yPos) >= 200){
+                this.yPos += this.speed * 2;
+            }
+            else
             this.yPos += this.speed;
         }
+        
+        if((this.xPos - squareMan.xPos) >= 200){
+            this.xPos -= this.speed * 2;
+        }
+        else
         this.xPos -= this.speed;
     }
     else if(this.xPos < squareMan.xPos){
@@ -130,6 +149,9 @@ Enemy.prototype.followTheMan = function(squareMan){
         this.xPos += this.speed;
     }
     else if(this.yPos > squareMan.yPos){
+        if((squareMan.yPos - this.yPos) >= 200){
+            this.yPos -= this.speed * 2
+        }
         this.yPos -= this.speed;
     }
     else {
@@ -137,36 +159,22 @@ Enemy.prototype.followTheMan = function(squareMan){
     }
     
 };
-Enemy.prototype.badTouch = function (enemy){
-   /*
-   if((this.xPos + this.radius) <= (enemy.xPos + enemy.radius) && (this.xPos - this.radius) >=(enemy.xPos - enemy.radius)){
-        this.xPos += enemy.radius * 2;
-    }
-    else if ((this.xPos - this.radius) <= (enemy.xPos + enemy.radius) && (this.xPos + this.radius) >= (enemy.xPos - enemy.radius)){
-        this.xpos -= enemy.radius * 2;
-    }
-    else if ((this.yPos + this.radius) <= (enemy.yPos + enemy.radius) && (this.yPos - this.radius) <= (enemy.yPos - enemy.radius)){
-        this.yPos -= enemy.radius * 2;
-    }
-    else if ((this.yPos + this.radius) >= (enemy.yPos + enemy.radius) && (this.yPos - this.radius) >= (enemy.yPos - enemy.radius)){
-        this.yPos += enemy.radius * 2;
-    }
-    */
-};
 function drawEnemy(listOfEnemy){
     for(var i = 0; i < listOfEnemy.length; i++){
         listOfEnemy[i].followTheMan(square);
         listOfEnemy[i].drawMe();
+        listOfEnemy[i].collisionTest(square);
     }
 }
 var oscar = new Enemy(40, 40),
-    mike = new Enemy(1240,550),
-    charlie = new Enemy(1240, 40),
-    echo = new Enemy(40, 550),
-    enemys = [oscar, mike, charlie, echo];
+    enemys = [oscar];
 function draw () {
         checkSquareMan();
         drawEnemy(enemys);
+        if(collision){
+            clearInterval(gameInterval);
+            clearInterval(timerInterval);
+        }
 }
 gameInterval = setInterval(draw, 1);
 timerInterval = setInterval(timer, 1000);

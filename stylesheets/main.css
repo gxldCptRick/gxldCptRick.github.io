@@ -1,7 +1,7 @@
 body{
     background: #ff3399 url(../images/backgroundImage/homebackground.png);
 }
-#description, #carouselDescription {
+#description {
     font-family: fantasy;
     font-size: 20px;
     color: #aaccee;
@@ -19,6 +19,3 @@ main {
       width: 100%;
       margin: auto;
   }
-#carouselDescription {
-    text-align: center;
-}
