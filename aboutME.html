@@ -2,29 +2,43 @@
 <html>
     <head>
         <title>about me</title>
-  <meta name= "viewport" content="width=device-width, initial-scale=1">
+        <meta name= "viewport" content="width=device-width, initial-scale=1">
         <link rel= "stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel= "stylesheet" href= "stylesheets/main.css">
+        <link rel= "stylesheet" href= "stylesheets/aboutMe.css">
         <link rel="icon" type="image/png" href="images/SiteLogo.png"/>
         <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
         <script async src = "bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <header>
+         <nav class ="navbar navbar-inverse navbar-static-top">
+            <div class = "container-fluid">
+                <div class = "navbar-header">
+                    <a href ="index.html" class = "navbar-brand">GXLD CPT RICK</a>
+                </div>
+                <ul class = "nav navbar-nav navbar-right">
+                    <li><a href = "index.html">Home</a></li>
+                    <li><a href = "miniGame.html">Mini Game</a></li>
+                    <li><a href="jQueryMagic.html">Jquery Magic</a></li>
+                    <li><a href = "CatchTheDrift.html"> Catch the Drift</a></li>
+                    <li class = "active"><a href = "aboutME.html">About Me</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header class = "container">
             <h1>About Me</h1>
         </header>
-             <nav>
-            <ul>
-                <li><a href = "index.html">Home</a></li>
-                <li><a href = "miniGame.html">Mini Game</a></li>
-                <li><a href = "jQueryMagic.html">JQuery Magic</a></li>
-                <li><a href = "CatchTheDrift.html"> Catch the Drift</a></li>
-            </ul>
-        </nav>
-        <main>
-            <p> I used javaScript, HTML, and CSS to make the website you see now. I also implemented some of this stuff using jQuery too.</p>
-            <p>You can Contact Me at Andreshcar@live.com</p>
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/eGWOgAnb1gk" frameborder="100" allowfullscreen></iframe>
+        <main class = "container">
+            <div class = "row">
+                <div class = "col-xs-6 col-xs-offset-3">
+                    <p id = "info"> I used javaScript, HTML, and CSS to make the website you see now. I also implemented some of this stuff using jQuery too.</p>
+                </div>
+            </div>
+            <div class = "row">
+                <div class= "col-xs-6 col-xs-offset-3">
+                    <p id = "info">You can Contact Me at Andreshcar@live.com</p>
+                </div>
+            </div>
         </main>
     </body>
 </html>
