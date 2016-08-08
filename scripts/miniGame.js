@@ -1,6 +1,6 @@
 var timeSpace = document.getElementById("timer"),
     gameStartButton = document.getElementById("gameStart"),
-gameInterval,
+    gameInterval,
     timerInterval,
     time,
     seconds = 0,
