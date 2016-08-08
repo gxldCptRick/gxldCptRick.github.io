@@ -5,3 +5,6 @@ canvas {
     font-family: fantasy;
     font-size: 20px;
 }
+.hidden {
+    display: none;
+}
