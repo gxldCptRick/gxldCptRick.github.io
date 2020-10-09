@@ -13,4 +13,7 @@ module.exports = {
       }),
     ],
   },
+  output: {
+    filename: "game.js",
+  },
 };
