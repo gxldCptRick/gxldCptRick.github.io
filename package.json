@@ -4,6 +4,7 @@
     "webpack": "^4.44.2"
   },
   "scripts": {
+    "build-main": "webpack --mode production --colors --output-filename main.js --display-modules --display-error-details scripts/main.js",
     "build-game": "webpack --mode production --colors --output-filename game.js  --display-modules --display-error-details scripts/miniGame.js"
   }
 }
