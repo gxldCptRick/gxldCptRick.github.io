@@ -4,12 +4,12 @@ const loadingEvent = () => {
   let timeSpace = document.getElementById("timer"),
     gameStartButton = document.getElementById("gameStart"),
     canvas = document.getElementById("stuff"),
+    context = canvas.getContext("2d"),
     gameInterval,
     timerInterval,
     seconds = 0,
     minutes = 0,
     hours = 0,
-    speed = 3,
     movement = {
       a: false,
       w: false,
@@ -26,7 +26,6 @@ const loadingEvent = () => {
       d: "d",
       w: "w",
     },
-    hasCollided = false,
     main_bad_guy = new Enemy.Enemy(40, 40, canvas),
     enemies = [main_bad_guy],
     hiddenClassName = "hidden";
@@ -63,7 +62,7 @@ const loadingEvent = () => {
     SquareMan.defaultSquare.transitionOnInput(movement);
     SquareMan.defaultSquare.render();
     drawEnemy(enemies);
-    if (hasCollided) {
+    if (enemies.some((e) => e.hasCollided)) {
       clearGameIntervals();
       gameStartButton.classList.remove(hiddenClassName);
     }
@@ -86,9 +85,9 @@ const loadingEvent = () => {
   const resetTimer = () => (hours = minutes = seconds = 0);
   function gameStart() {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    hasCollided = false; // lessons from a lazy programmer lol
     resetTimer();
-    resetCharacters([SquareMan.defaultSquare, main_bad_guy]);
+    resetCharacters([SquareMan.defaultSquare, ...enemies]);
+    enemies.forEach((e) => (e.hasCollided = false));
     startGameIntervals();
     gameStartButton.classList.add(hiddenClassName);
   }

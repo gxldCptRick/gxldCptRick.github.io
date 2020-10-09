@@ -4,6 +4,6 @@
     "webpack": "^4.44.2"
   },
   "scripts": {
-    "build-game": "webpack --mode production --colors --build-delimiter --display-modules --display-error-details scripts/miniGame.js"
+    "build-game": "webpack --mode production --colors  --display-modules --display-error-details scripts/miniGame.js"
   }
 }

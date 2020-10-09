@@ -14,7 +14,7 @@ export const Enemy = (function () {
       );
     }
     collisionTest(square) {
-      hasCollided =
+      this.hasCollided =
         this.hasCollidedWithCharacter(square) ||
         square.hasCollidedWithCharacter(this);
       return this;
