@@ -1,7 +1,7 @@
-var Character = (function () {
+export const Character = (function () {
   const axisToDimension = { x: "width", y: "height" };
   class Character {
-    constructor(x, y, size, speed = 10, defaultBuffer = 10) {
+    constructor(x, y, size, speed = 10, defaultBuffer = 10, canvas) {
       this.size = size;
       this.xPos = x;
       this.yPos = y;
@@ -9,6 +9,8 @@ var Character = (function () {
       this.originY = y;
       this.speed = speed;
       this.defaultBuffer = defaultBuffer;
+      this.canvas = canvas;
+      this.context = canvas.getContext("2d");
     }
     resetPositionX() {
       this.resetPosition("x");
@@ -20,10 +22,10 @@ var Character = (function () {
       let key = `${axis}Pos`;
       let dimension = axisToDimension[axis];
       if (this[key] < 0) {
-        this[key] = canvas[dimension] - this.size;
+        this[key] = this.canvas[dimension] - this.size;
       } else if (
         this[key] - this.size + this.defaultBuffer >
-        canvas[dimension]
+        this.canvas[dimension]
       ) {
         this[key] = 0;
       }

@@ -1,4 +1,5 @@
-var SquareMan = (function () {
+import { Character } from "./Character";
+export const SquareMan = (function () {
   const directions = {
     up: "w",
     down: "s",
@@ -6,10 +7,10 @@ var SquareMan = (function () {
     right: "d",
   };
   class Player extends Character.Character {
-    constructor(x, y, speed) {
-      super(x, y, 20, speed, 10);
+    constructor(x, y, speed, canvas) {
+      super(x, y, 20, speed, 10, canvas);
     }
-    transitionOnInput() {
+    transitionOnInput(movement) {
       for (const direction in directions) {
         let directionCapitalized =
           direction[0].toUpperCase() + direction.substr(1);
@@ -21,15 +22,14 @@ var SquareMan = (function () {
       this.render();
     }
     render() {
-      context.beginPath();
-      context.rect(this.xPos, this.yPos, this.size, this.size);
-      context.fillStyle = "#000";
-      context.fill();
-      context.closePath();
+      this.context.beginPath();
+      this.context.rect(this.xPos, this.yPos, this.size, this.size);
+      this.context.fillStyle = "#000";
+      this.context.fill();
+      this.context.closePath();
     }
   }
   return {
     Player,
-    defaultSquare: new Player(0, 0, 1),
   };
 })();

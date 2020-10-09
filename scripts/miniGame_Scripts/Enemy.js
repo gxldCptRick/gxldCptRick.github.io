@@ -1,7 +1,8 @@
-var Enemy = (function () {
+import { Character } from "./Character";
+export const Enemy = (function () {
   class Enemy extends Character.Character {
-    constructor(x, y) {
-      super(x, y, 64, 2);
+    constructor(x, y, canvas) {
+      super(x, y, 64, 2, 10, canvas);
       this.radius = this.size / 2;
     }
     hasCollidedWithCharacter(character = new Character.Character()) {
@@ -19,8 +20,8 @@ var Enemy = (function () {
       return this;
     }
     render() {
-      context.beginPath();
-      context.arc(
+      this.context.beginPath();
+      this.context.arc(
         this.xPos,
         this.yPos,
         this.radius,
@@ -28,9 +29,9 @@ var Enemy = (function () {
         2 * Math.PI,
         true
       );
-      context.fillStyle = "#9900ff";
-      context.fill();
-      context.closePath();
+      this.context.fillStyle = "#9900ff";
+      this.context.fill();
+      this.context.closePath();
       return this;
     }
     followCharacter(squareMan = new Character.Character()) {
