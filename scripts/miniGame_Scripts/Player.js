@@ -15,11 +15,6 @@ var SquareMan = (function () {
           direction[0].toUpperCase() + direction.substr(1);
 
         if (movement[directions[direction]]) {
-          console.log(
-            directionCapitalized,
-            movement[directions[direction]],
-            directions[direction]
-          );
           this[`move${directionCapitalized}`]();
         }
       }

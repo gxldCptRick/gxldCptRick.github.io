@@ -19,14 +19,10 @@ var Character = (function () {
     resetPosition(axis) {
       let key = `${axis}Pos`;
       let dimension = axisToDimension[axis];
-      console.log(
-        canvas[dimension],
-        this[key] + (this.size + this.defaultBuffer)
-      );
       if (this[key] < 0) {
         this[key] = canvas[dimension] - this.size;
       } else if (
-        this[key] + (this.size + this.defaultBuffer) >
+        this[key] - this.size + this.defaultBuffer >
         canvas[dimension]
       ) {
         this[key] = 0;

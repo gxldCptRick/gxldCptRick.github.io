@@ -14,6 +14,16 @@ var timeSpace = document.getElementById("timer"),
     s: false,
     d: false,
   },
+  translateKey = {
+    ArrowUp: "w",
+    ArrowDown: "s",
+    ArrowLeft: "a",
+    ArrowRight: "d",
+    a: "a",
+    s: "s",
+    d: "d",
+    w: "w",
+  },
   maxHeight = canvas.height,
   maxWidth = canvas.width,
   hasCollided = false,
@@ -82,8 +92,8 @@ function gameStart() {
   gameStartButton.classList.add(hiddenClassName);
 }
 document.addEventListener("keydown", function (e) {
-  movement[e.key] = true;
+  movement[translateKey[e.key] || "unmapped"] = true;
 });
 document.addEventListener("keyup", function (e) {
-  movement[e.key] = false;
+  movement[translateKey[e.key] || "unmapped"] = false;
 });
