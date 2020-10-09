@@ -1,101 +1,89 @@
 var timeSpace = document.getElementById("timer"),
-    gameStartButton = document.getElementById("gameStart"),
-    gameInterval,
-    timerInterval,
-    time,
-    seconds = 0,
-    minutes = 0, 
-    hours = 0,
-    speed = 3,
-    up = false,
-    down = false,
-    left = false,
-    right = false,
-    maxHeight = canvas.height,
-    maxWidth = canvas.width,
-    collision = false,
-    oscar = new Enemy(40, 40),
-    enemys = [oscar];
-function drawEnemy(listOfEnemy){
-    for(var i = 0; i < listOfEnemy.length; i++){
-        listOfEnemy[i].followTheMan(SquareMan.square);
-        listOfEnemy[i].drawMe();
-        listOfEnemy[i].collisionTest(SquareMan.square);
-    }
+  gameStartButton = document.getElementById("gameStart"),
+  canvas = document.getElementById("stuff"),
+  context = canvas.getContext("2d"),
+  gameInterval,
+  timerInterval,
+  seconds = 0,
+  minutes = 0,
+  hours = 0,
+  speed = 3,
+  movement = {
+    a: false,
+    w: false,
+    s: false,
+    d: false,
+  },
+  maxHeight = canvas.height,
+  maxWidth = canvas.width,
+  hasCollided = false,
+  main_bad_guy = new Enemy.Enemy(40, 40),
+  enemies = [main_bad_guy],
+  hiddenClassName = "hidden";
+
+SquareMan.defaultSquare = new SquareMan.Player(
+  canvas.width - 10,
+  canvas.height - 10,
+  4
+);
+
+function drawEnemy(listOfEnemy) {
+  for (let enemy of listOfEnemy) {
+    enemy.followCharacter(SquareMan.defaultSquare);
+  }
 }
-function timer(){
-    if(seconds === 59){
-        if(minutes === 59){
-            hours++;
-            minutes = 0;
-        }
-        else{
-            minutes++;
-        }
-        seconds = 0;
-    }
-    else{
-        seconds++;
-    }
-    if(seconds < 10 && minutes < 10)
-        time = hours+":0"+minutes+":0"+seconds;
-    else if(seconds < 10)
-        time =  hours+":"+minutes+":0"+seconds;
-    else if(minutes < 10)
-        time =  hours+":0"+minutes+":"+seconds;
-    else
-        time =  hours+":"+minutes+":"+seconds;
-    timeSpace.innerHTML = time;
+function timer() {
+  seconds++;
+  minutes = minutes + Math.floor(seconds / 60);
+  seconds = seconds % 60;
+  hours = hours + Math.floor(minutes / 60);
+  minutes = minutes % 60;
+  updateTime();
 }
-function draw () {
-    SquareMan.checkSquareMan();
-    drawEnemy(enemys);
-    if(collision){
-        clearInterval(gameInterval);
-        clearInterval(timerInterval);
-        gameStartButton.classList.remove("hidden");
-    }
+
+const padZeros = (num, zeroes = 2) => num.toString().padStart(zeroes, "0");
+const updateTime = () =>
+  (timeSpace.innerHTML = `${padZeros(hours)}:${padZeros(minutes)}:${padZeros(
+    seconds
+  )}`);
+
+function draw() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  SquareMan.defaultSquare.transitionOnInput();
+  SquareMan.defaultSquare.render();
+  drawEnemy(enemies);
+  if (hasCollided) {
+    clearGameIntervals();
+    gameStartButton.classList.remove(hiddenClassName);
+  }
 }
-function gameStart(){
-    collision = false;
-    hours = minutes = seconds = 0;
-    SquareMan.square.xPos = 627;
-    SquareMan.square.yPos = 277;
-    oscar.yPos = 40;
-    oscar.xPos = 40;
-    gameInterval = setInterval(draw, 1);
-    timerInterval = setInterval(timer, 1000);
-    gameStartButton.classList.add("hidden");
+
+const clearGameIntervals = () => {
+  clearInterval(gameInterval);
+  clearInterval(timerInterval);
+};
+const resetCharacters = (characters = []) => {
+  for (let character of characters) {
+    character.xPos = character.originX;
+    character.yPos = character.originY;
+  }
+};
+const startGameIntervals = () => {
+  gameInterval = setInterval(draw, 10);
+  timerInterval = setInterval(timer, 1000);
+};
+const resetTimer = () => (hours = minutes = seconds = 0);
+function gameStart() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  hasCollided = false; // lessons from a lazy programmer lol
+  resetTimer();
+  resetCharacters([SquareMan.defaultSquare, main_bad_guy]);
+  startGameIntervals();
+  gameStartButton.classList.add(hiddenClassName);
 }
-document.addEventListener('keydown',function(e){
-    switch(e.keyCode){
-        case 65:
-            left = true;
-            break;
-        case 87:
-            up = true;
-            break;
-        case 68:
-            right = true;
-            break;
-        case 83:
-            down = true;
-            break;
-    }
+document.addEventListener("keydown", function (e) {
+  movement[e.key] = true;
 });
-document.addEventListener('keyup',function(e){
-    switch(e.keyCode){
-        case 65:
-            left = false;
-            break;
-        case 87:
-            up = false;
-            break;
-        case 68:
-            right = false;
-            break;
-        case 83:
-            down = false;
-            break;
-    }
+document.addEventListener("keyup", function (e) {
+  movement[e.key] = false;
 });

@@ -1,65 +1,57 @@
-function Enemy(x, y){
-    this.xPos = x;
-    this.yPos = y;
-    this.radius = 32;
-    this.speed = 2;
-};
-Enemy.prototype.collisionTest = function(square){
-    if(this.xPos >= square.xPos && (this.xPos <=  (square.xPos + square.size)) && this.yPos >= square.yPos && (this.yPos <= (square.yPos + square.size))){
-        collision = true;
+var Enemy = (function () {
+  class Enemy extends Character.Character {
+    constructor(x, y) {
+      super(x, y, 64, 2);
+      this.radius = this.size / 2;
     }
-};
-Enemy.prototype.drawMe = function(){
-    context.beginPath();
-    context.arc(this.xPos, this.yPos, this.radius, 0 * Math.PI, 2 * Math.PI,true);
-    context.fillStyle = "#9900ff";
-    context.fill();
-    context.closePath();
-};
-Enemy.prototype.followTheMan = function(squareMan){
-    if(this.xPos > squareMan.xPos){
-        if(this.yPos > squareMan.yPos){
-            if((squareMan.yPos - this.yPos) >= 200){
-                this.yPos -= this.speed * 2;
-            } 
-            else
-                this.yPos-= this.speed;
-        }
-        else {
-            if((this.yPos - squareMan.yPos) >= 200){
-                this.yPos += this.speed * 2;
-            }
-            else
-                this.yPos += this.speed;
-        }
+    hasCollidedWithCharacter(character = new Character.Character()) {
+      return (
+        this.yPos - this.radius >= character.yPos && // ceiling
+        this.yPos + this.radius <= character.yPos && // floor
+        this.xPos + this.radius <= character.xPos && // right barrier
+        this.xPos - this.radius >= character.xPos // left barrier
+      );
+    }
+    collisionTest(square) {
+      hasCollided =
+        this.hasCollidedWithCharacter(square) ||
+        square.hasCollidedWithCharacter(this);
+      return this;
+    }
+    render() {
+      context.beginPath();
+      context.arc(
+        this.xPos,
+        this.yPos,
+        this.radius,
+        0 * Math.PI,
+        2 * Math.PI,
+        true
+      );
+      context.fillStyle = "#9900ff";
+      context.fill();
+      context.closePath();
+      return this;
+    }
+    followCharacter(squareMan = new Character.Character()) {
+      if (this.xPos < squareMan.xPos) {
+        this.moveRight();
+      }
+      if (this.xPos > squareMan.xPos) {
+        this.moveLeft();
+      }
+      if (this.yPos < squareMan.yPos) {
+        this.moveDown();
+      }
+      if (this.yPos > squareMan.yPos) {
+        this.moveUp();
+      }
 
-        if((this.xPos - squareMan.xPos) >= 200){
-            this.xPos -= this.speed * 2;
-        }
-        else
-            this.xPos -= this.speed;
+      this.collisionTest(squareMan).render();
+      return this;
     }
-    else if(this.xPos < squareMan.xPos){
-        if(this.yPos > squareMan.yPos){
-            if(( squareMan.yPos - this.yPos) >= 200){
-                this.yPos -= this.speed * 2;   
-            }
-            else
-            this.yPos -= this.speed;
-        }
-        else {
-            this.yPos += this.speed;
-        }
-        this.xPos += this.speed;
-    }
-    else if(this.yPos > squareMan.yPos){
-        if((squareMan.yPos - this.yPos) >= 200){
-            this.yPos -= this.speed * 2
-        }
-        this.yPos -= this.speed;
-    }
-    else {
-        this.yPos += this.speed;
-    }
-
-};
+  }
+  return {
+    Enemy: Enemy,
+  };
+})();

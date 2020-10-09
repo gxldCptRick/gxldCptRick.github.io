@@ -1,70 +1,68 @@
-var canvas = document.getElementById("stuff"),
-    context = canvas.getContext('2d'),
-    SquareMan = (function(){
-        return{ 
-            square: {
-                xPos: 627,
-                yPos: 277,
-                size: 20
-            },
+var Character = (function () {
+  const axisToDimension = { x: "width", y: "height" };
+  class Character {
+    constructor(x, y, size, speed = 10, defaultBuffer = 10) {
+      this.size = size;
+      this.xPos = x;
+      this.yPos = y;
+      this.originX = x;
+      this.originY = y;
+      this.speed = speed;
+      this.defaultBuffer = defaultBuffer;
+    }
+    resetPositionX() {
+      this.resetPosition("x");
+    }
+    resetPositionY() {
+      this.resetPosition("y");
+    }
+    resetPosition(axis) {
+      let key = `${axis}Pos`;
+      let dimension = axisToDimension[axis];
+      console.log(
+        canvas[dimension],
+        this[key] + (this.size + this.defaultBuffer)
+      );
+      if (this[key] < 0) {
+        this[key] = canvas[dimension] - this.size;
+      } else if (
+        this[key] + (this.size + this.defaultBuffer) >
+        canvas[dimension]
+      ) {
+        this[key] = 0;
+      }
+    }
+    moveUp(spaces = 1) {
+      this.yPos -= spaces * this.speed;
+      this.resetPositionY();
+    }
+    moveDown(spaces = 1) {
+      this.yPos += spaces * this.speed;
+      this.resetPositionY();
+    }
+    moveRight(spaces = 1) {
+      this.xPos += spaces * this.speed;
+      this.resetPositionX();
+    }
+    moveLeft(spaces = 1) {
+      this.xPos -= spaces * this.speed;
+      this.resetPositionX();
+    }
 
-            checkSquareMan: function(){
-                if(!((this.square.xPos + this.square.size) >= maxWidth) && !((this.square.yPos + this.square.size) >= maxHeight) && !(this.square.xPos <= 0) && !(this.square.yPos <= 0)){
+    hasCollidedWithCharacter(character = new Character()) {
+      return (
+        this.xPos <= character.xPos &&
+        this.xPos + this.size >= character.xPos &&
+        this.yPos <= character.yPos &&
+        this.yPos + this.size >= character.yPos
+      );
+    }
 
-                    if(up){
-                        if(left){
-                            this.square.xPos -= speed;
-                        }
-                        else if(right){
-                            this.square.xPos += speed;
-                        }
-                        this.square.yPos -= speed;
-                    }
-                    else if(down){
-                        if(left){
-                            this.square.xPos -= speed;
-                        }
-                        else if(right){
-                            this.square.xPos += speed;
-                        }
-                        this.square.yPos += speed;
-                    }
-                    else if(left){
-                        this.square.xPos -= speed;
-                    }
-                    else if(right){
-                        this.square.xPos += speed;
-                    }
-                    this.drawSquareMan();
-                } 
-                else if(this.square.yPos <= 0){
-                    this.square.yPos = maxHeight - (this.square.size + 10);
-                    this.drawSquareMan();
-                }
-                else if((this.square.yPos + this.square.size) >= maxHeight){
-                    this.square.yPos = 10;
-                    this.drawSquareMan();
-                }
-                else if(this.square.xPos <= 0){
-                    this.square.xPos = maxWidth - (this.square.size + 10);
-                    this.drawSquareMan();
-                }
-                else if((this.square.xPos + this.square.size) >= maxWidth){
-                    this.square.xPos = 10;
-                    this.drawSquareMan();
-                }
-            },
-            drawSquareMan: function(){
-            context.beginPath();
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.rect(this.square.xPos, this.square.yPos, this.square.size, this.square.size);
-            context.fillStyle = "#000";
-            context.fill();
-            context.closePath();
-
-        }
-            
-        };
-
-
-    })();
+    render() {
+      throw new Error("Not Implemented");
+    }
+  }
+  return {
+    Character,
+  };
+})();
