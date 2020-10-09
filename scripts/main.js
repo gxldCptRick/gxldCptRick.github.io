@@ -2,16 +2,20 @@ const onload = () => {
   const canvas = document.getElementById("photo"),
     context = canvas.getContext("2d");
   context.beginPath();
-  context.arc(75, 75, 75, 0, Math.PI * 2, true);
+  const imageWidth = 75;
+  context.arc(imageWidth, imageWidth, imageWidth, 0, Math.PI * 2, true);
   context.clip();
   const img = new Image();
+  img.width = 100;
+  img.height = 100;
+  img.style = "width:10px;height:10px;";
   img.onload = () => {
-    context.drawImage(img, -60, 0);
+    context.drawImage(img, 0, 0, 150, 150);
     context.lineWidth = 15;
     context.strokeStyle = "#000";
     context.stroke();
   };
-  img.src = "../images/gxldcptrickE.jpg";
+  img.src = "images/gxldcptrickE.jpg";
 };
 
 window.addEventListener("load", onload);
