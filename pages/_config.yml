@@ -22,7 +22,7 @@ title: GXLDCPTRICK Github Pages
 email: andreshcar@live.com
 description: >- # this means to ignore newlines until "baseurl:"
   Blog site for GXLDCPTRICK github account where I cover topics and tutorials on software development.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/pages" # the subpath of your site, e.g. /blog
 url: "https://gxldcptrick.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 domain: gxldcptrick.github.io
 github_username:  gxldcptrick
