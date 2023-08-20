@@ -16,4 +16,4 @@ I love to learn new tools and methodologies and I want a place where I can put t
 how to express myself in the same medium of code that my cohorts can and hopefully I can use this to allow myself to connect 
 to like minded individuals.
 
-If you would like to get in contact please feel free to email me at [andreshcar@live.com](mailto:andreshcar@live.com)
+If you would like to get in contact please feel free to email me at [andreshcar@live.com](mailto:andreshcar@live.com) and I can get back to you as soon as I am able.
