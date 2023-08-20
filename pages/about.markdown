@@ -15,3 +15,5 @@ and the things I have been able to pick up through rigorous studying and paying 
 I love to learn new tools and methodologies and I want a place where I can put those ideas to paper in my own words to learn 
 how to express myself in the same medium of code that my cohorts can and hopefully I can use this to allow myself to connect 
 to like minded individuals.
+
+If you would like to get in contact please feel free to email me at [andreshcar@live.com](mailto:andreshcar@live.com)
