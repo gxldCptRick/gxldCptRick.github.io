@@ -32,11 +32,13 @@ title: Projects
 permalink: /projects/
 ---
 <ul>
+{% raw %}
 {% for project in site.projects %}
 <li>
     <a href="{{project.permalink}}">{{project.title}} </a>
 </li>
 {% endfor %}
+{%end raw%}
 </ul>
 ```
 
@@ -49,15 +51,14 @@ Since I have project files I wanted to add some default layout for them to be ab
 layout: default
 ---
 <article class="post">
-
+    {% raw %}
     <header class="post-header">
-        <h1 class="post-title"><a target="_blank" href="https://github.com/{{page.repo-name}}">{{ page.title | escape
-                }}</a></h1>
+        <h1 class="post-title"><a target="_blank" href="https://github.com/{{page.repo-name}}">{{ page.title | escape  }}</a></h1>
     </header>
     <div class="post-content">
         {{ content }}
     </div>
-
+    {% endraw %}
 </article>
 ```
 
