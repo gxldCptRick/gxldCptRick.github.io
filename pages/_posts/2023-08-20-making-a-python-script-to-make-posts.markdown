@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Making a python script to make posts"
+title: "Making a Python Script to Make Posts"
 date: 2023-08-20 06:27:20 +0000
 author: Andres Hermilo Carrera Reynaga
 categories: jekyll python scripting
