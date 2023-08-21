@@ -38,7 +38,7 @@ permalink: /projects/
     <a href="{{project.permalink}}">{{project.title}} </a>
 </li>
 {% endfor %}
-{%end raw%}
+{% endraw %}
 </ul>
 ```
 
