@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
 This is what is on my github pages repo so you can check it out if I ever update it but lets break this script down into its component parts.
 
-First we are pulling down a very crucial dependency called []`Click`](https://click.palletsprojects.com/en/8.1.x/). This library allows me to be able to quickly write up a command line tool with little to no knowledge about how to parse out command line parameters as well as create a beautiful cli interface for scripts that I write adhoc. If you haven't used it yet I would highly recommend checking it out when you have the time.
+First we are pulling down a very crucial dependency called [`Click`](https://click.palletsprojects.com/en/8.1.x/). This library allows me to be able to quickly write up a command line tool with little to no knowledge about how to parse out command line parameters as well as create a beautiful cli interface for scripts that I write adhoc. If you haven't used it yet I would highly recommend checking it out when you have the time.
 
 ```python
 @click.command()
