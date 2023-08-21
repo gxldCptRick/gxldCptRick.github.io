@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
+<img src='/images/face.jpg' alt='Picture of my face' style='width: 150px;' />
 
 I am a software engineer who currently works on a system built from many FastAPI applications. 
 My primary focus day to day is writing and maintaining Python Code currently version 3.10.x but 
