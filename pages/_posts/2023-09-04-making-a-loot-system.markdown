@@ -34,12 +34,31 @@ def random_item(bag_with_items: list[dict], random_func):
     selected_value = random_func(0, total_in_bag)  # this should return a non-inclusive for the max
     current_weight = 0
     # we sort so that we can control where the rare items are on the scale but it isn't needed
+    last_item = None
     for item in sorted(bag_with_items, lambda i: i['weight']): 
         current_weight += item['weight']
         if current_weight > selected_value:
             return item
-    return None # this should only be the case of an empty bag
+        last_item = item
+    return last_item # this should only be the case of an empty bag
 
 ````
 
-As you can see we add up the items
+As you can see we add up the weights of the items to build our range,
+in the case of our bag it would be 0.9 + 0.1 = 1 for total_in_bag.
+
+Then we use that total to generate a value between 0, 1 not including 1
+so we can make our selection of the item.
+
+After that we calculate on the fly what item our value falls into the range of.
+We blanket any value under the weight of the current position of the bag as the item in the bag.
+i.e. anything under 0.1 will be the Large Mana Potion but once it gets to .1 it will be in the small health potion range.
+
+And if we happen to be at the end of the range we just use the last_item or none if there was never anything in the bag.
+
+With this idea you can use any number for your weight since that will just increase the range you will be serving the items
+from. This also means you can do stuff like spreads similar to 1:5:10 which would spread your values correctly across the range.
+
+I thought this was a really cool way to be able to help me simplify the work I was doing with the card packs since I needed a way 
+after specifying the odds for the rarity to select the rarity for me for any given sets.
+I hope this can be useful to you too and I wish you a great day!!
