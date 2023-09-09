@@ -1,8 +1,18 @@
 from datetime import datetime
 import re
+from typing import Any
 
 import click
 
+TEMPLATE_WITH_TAGS = """---
+layout: post
+title: "{title}"
+date: {timestamp}
+author: {author}
+categories: {categories}
+tags: [{tags}]
+---
+"""
 
 TEMPLATE = """---
 layout: post
@@ -28,27 +38,41 @@ def create_file_name(post_title: str, timestamp: datetime):
 
 
 def format_categories(categories: str):
-    split_categories = categories.split(" ")
-    comma_seperated_categories = ",".join(split_categories)
-    return f"[{comma_seperated_categories}]"
+    return categories
+
+
+def ensure_list(item: Any):
+    if isinstance(item, list):
+        return item
+    else:
+        return [item]
 
 
 @click.command()
 @click.option("--post-name", required=True)
 @click.option("--author", default="Andres Hermilo Carrera Reynaga")
 @click.option("--categories", required=True)
-def main(post_name: str, author: str, categories: str):
+@click.option("--tag", multiple=True)
+def main(post_name: str, author: str, categories: str, tag: list[str]):
     timestamp = datetime.utcnow()
     new_page_name = create_file_name(post_name, timestamp)
     with open(new_page_name, "w") as fp:
-        fp.write(
-            TEMPLATE.format(
+        out = TEMPLATE.format(
+            author=author,
+            title=post_name,
+            categories=format_categories(categories),
+            timestamp=timestamp.strftime(POSTNAME_DATETIME_FORMAT),
+        )
+        if tag:
+            out = TEMPLATE_WITH_TAGS.format(
                 author=author,
                 title=post_name,
                 categories=format_categories(categories),
+                tags=",".join(ensure_list(tag)),
                 timestamp=timestamp.strftime(POSTNAME_DATETIME_FORMAT),
             )
-        )
+
+        fp.write(out)
 
 
 if __name__ == "__main__":
