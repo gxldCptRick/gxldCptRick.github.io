@@ -3,11 +3,12 @@ layout: post
 title: "Making a loot system"
 date: 2023-09-04 04:46:40 +0000
 author: Andres Hermilo Carrera Reynaga
-categories: python game-dev web-dev
+categories: updates
+tags: [python,game-dev,web-dev]
 ---
-Heyyoo!! I haven't written in a while so I wanted to talk about some work I found myself doing for the Yugioh Card Puller project.
-It was really fun because it had to do with building out a system in which I would be able to have a weighted list of items and 
-select one randomly where the weight was correlated with the likely hood they would be selected. For example lets say I have a
+Heyyoo!! I haven't written in a while so I wanted to talk about some work I found myself doing for the Yugioh Card Puller project. It was really fun because it had to do with building out a system in which I would be able to have a weighted list of items and select one randomly where the weight was correlated with the likely hood they would be selected. 
+
+For example lets say I have a
 game where I want players to be able to get items randomly. The items range from really basic stuff that should be dropping frequently
 to things that are game breaking so you want to limit the supply of them. So I have lets say a small health potion and a large mana potion.
 Because the small health potion is so common I want it to appear with a frequency of 9 out of 10 times when pulling from the chest I generate.

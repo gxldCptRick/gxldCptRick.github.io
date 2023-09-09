@@ -3,7 +3,8 @@ layout: post
 title:  "My First Blog Post"
 date:   2023-08-19 21:46:06 +0000
 author: Andres Hermilo Carrera Reynaga
-categories: jekyll updates
+categories: updates
+tags: [jekyll,markdown]
 ---
 
 Heyyo!! this is my first blog post where I am learning how jekyll works and what I want to do with this site. Please excuse the messyness of this and the bad grammar. I am still trying to understand both how to write and how to use [Jekyll](https://jekyllrb.com/) so I hope you stay along with this journey.

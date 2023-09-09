@@ -31,7 +31,10 @@ github_username: gxldcptrick
 theme: minima
 plugins:
   - jekyll-feed
-
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitempa
+show_excerpts: true
 collections:
   projects:
     output: true

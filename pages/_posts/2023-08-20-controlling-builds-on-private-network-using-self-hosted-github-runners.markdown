@@ -3,14 +3,15 @@ layout: post
 title: "Controlling Builds on Private Networks using Self Hosted Github Runners"
 date: 2023-08-20 22:26:45 +0000
 author: Andres Hermilo Carrera Reynaga
-categories: ci-cd tutorial github github-actions
+categories: tutorial
+tags: [ci-cd,github,github-actions]
 ---
+Because I just learned about githubs self hosted runners option I wanted to show yall how to actually get jobs up and running for your CI/CD pipelines and run them on your own runners.
+
 Quick Links
 - [Github Actions Overview](#github-actions-overview)
 - [Setting up Self Hosted Actions runner](#setting-up-self-hosted-actions-runner)
 - [Configure Workflows to use Self Hosted Runner](#configure-workflows-to-use-self-hosted-runner)
-
-Because I just learned about githubs self hosted runners option I wanted to show yall how to actually get jobs up and running for your CI/CD pipelines and run them on your own runners.
 
 [If you don't know about Github Actions I would suggest reading this first here.](https://docs.github.com/en/actions) In short github actions is githubs CI/CD solution that you can configure to run anything you want to when making things happen in your github repo. It can be configured to run either on a `workflow_dispatch` i.e. Go to github repo, click on actions, click on run. It can also be run on `pull_request`'s and `push`es so you can have something like a unit test suite run and you can have life feedback of any code changes you have committed to your repo. It is important that just because you setup a github actions to run your test suites, it doesn't write the tests for you and you should consider adding testing to your develpoment flows. 
 

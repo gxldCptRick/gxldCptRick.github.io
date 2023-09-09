@@ -3,9 +3,12 @@ layout: post
 title: "Adding Projects to My Blogsite"
 date: 2023-08-21 03:42:00 +0000
 author: Andres Hermilo Carrera Reynaga
-categories: jekyll python project-update
+categories: updates
+tags: [jekyll,python,project-update]
 ---
-So today I was wondering how I could add projects to this site without having to add each and every entry into the navbar above and that is when I was able to push Jekyll to its fullest form. I found out that with Jekyll you can create your own objects called collections that you can then define html for and use throughout your site after adding it to you config.
+I was wondering how I could add projects to this site without having to add each and every entry into the navbar above and that is when I was able to push Jekyll to its fullest form. 
+
+I found out that with Jekyll you can create your own objects called collections that you can then define html for and use throughout your site after adding it to you config.
 
 Allow me to walk you through how I used that to be able to generate a Projects page that would then allow me to post my different projects in github while I also created a script to generate the markdown files that I am going to use for the project details pages.
 

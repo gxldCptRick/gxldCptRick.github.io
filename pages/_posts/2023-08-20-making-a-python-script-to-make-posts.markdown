@@ -3,10 +3,11 @@ layout: post
 title: "Making a Python Script to Make Posts"
 date: 2023-08-20 06:27:20 +0000
 author: Andres Hermilo Carrera Reynaga
-categories: jekyll python scripting
+categories: tutorial
+tags: [jekyll,python,scripting]
 ---
 
-Second post but will be another one later today hopefully if I am able to find time haha. Today I will be covering a script I made to help me build posts on jenkins without having to remeber as much which will be nice. I am working with python a lot so today I decided to write a script that can generate at template for me to start bulding the post headers and what not based on when I wanted to create the page
+Today I will be covering a script I made to help me build posts on jenkins without having to remember as much which will be nice. I am working with python a lot so today I decided to write a script that can generate at template for me to start bulding the post headers and what not based on when I wanted to create the page
 
 ``` python
 from datetime import datetime
