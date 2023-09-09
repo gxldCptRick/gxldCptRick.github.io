@@ -13,34 +13,43 @@ categories: {categories}
 ---
 """
 
-ILLEGAL_ITEMS_REGEX = re.compile('[\':/\\+\\[\\]"]+')
-FILENAME_DATE_FORMAT = '%Y-%m-%d'
-POSTNAME_DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S +0000'
+ILLEGAL_ITEMS_REGEX = re.compile("[':/\\+\\[\\]\"]+")
+FILENAME_DATE_FORMAT = "%Y-%m-%d"
+POSTNAME_DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S +0000"
 
 
-def clean_post_title(title: str) -> str: 
-    partially_clean = title.lower().replace(' ', '-')
-    return re.sub(ILLEGAL_ITEMS_REGEX, '', partially_clean)
+def clean_post_title(title: str) -> str:
+    partially_clean = title.lower().replace(" ", "-")
+    return re.sub(ILLEGAL_ITEMS_REGEX, "", partially_clean)
 
 
 def create_file_name(post_title: str, timestamp: datetime):
-    return f'pages/_posts/{timestamp.strftime(FILENAME_DATE_FORMAT)}-{clean_post_title(post_title)}.markdown'
+    return f"pages/_posts/{timestamp.strftime(FILENAME_DATE_FORMAT)}-{clean_post_title(post_title)}.markdown"
+
+
+def format_categories(categories: str):
+    split_categories = categories.split(" ")
+    comma_seperated_categories = ",".join(split_categories)
+    return f"[{comma_seperated_categories}]"
 
 
 @click.command()
-@click.option('--post-name', required=True)
-@click.option('--author', default='Andres Hermilo Carrera Reynaga')
-@click.option('--categories', required=True)
+@click.option("--post-name", required=True)
+@click.option("--author", default="Andres Hermilo Carrera Reynaga")
+@click.option("--categories", required=True)
 def main(post_name: str, author: str, categories: str):
     timestamp = datetime.utcnow()
     new_page_name = create_file_name(post_name, timestamp)
-    with open(new_page_name, 'w') as fp:
-        fp.write(TEMPLATE.format(
-            author=author,
-            title=post_name,
-            categories=categories,
-            timestamp=timestamp.strftime(POSTNAME_DATETIME_FORMAT)
-        ))
+    with open(new_page_name, "w") as fp:
+        fp.write(
+            TEMPLATE.format(
+                author=author,
+                title=post_name,
+                categories=format_categories(categories),
+                timestamp=timestamp.strftime(POSTNAME_DATETIME_FORMAT),
+            )
+        )
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

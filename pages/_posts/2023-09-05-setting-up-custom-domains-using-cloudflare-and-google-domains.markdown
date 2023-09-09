@@ -3,7 +3,7 @@ layout: post
 title: "Setting up custom domains using CloudFlare and Google Domains"
 date: 2023-09-05 02:51:04 +0000
 author: Andres Hermilo Carrera Reynaga
-categories: infra cloudflare
+categories: [infra,cloudflare]
 ---
 So I wanted to share my experience with setting up things with my new fancy domain name!! 
 Currently I have setup cloudflare to hold power over my domain that I had recently bitten the bullet for using Google Domains.
