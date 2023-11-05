@@ -45,15 +45,20 @@ def ensure_list(item: Any):
     if isinstance(item, list):
         return item
     else:
-        return [item]
+        
+        try:
+            iter(item)
+            return list(item)
+        except:
+            return [item]
 
 
 @click.command()
 @click.option("--post-name", required=True)
 @click.option("--author", default="Andres Hermilo Carrera Reynaga")
 @click.option("--categories", required=True)
-@click.option("--tag", multiple=True)
-def main(post_name: str, author: str, categories: str, tag: list[str]):
+@click.option("--tags", multiple=True, required=True)
+def main(post_name: str, author: str, categories: str, tags: list[str]):
     timestamp = datetime.utcnow()
     new_page_name = create_file_name(post_name, timestamp)
     with open(new_page_name, "w") as fp:
@@ -63,12 +68,12 @@ def main(post_name: str, author: str, categories: str, tag: list[str]):
             categories=format_categories(categories),
             timestamp=timestamp.strftime(POSTNAME_DATETIME_FORMAT),
         )
-        if tag:
+        if tags:
             out = TEMPLATE_WITH_TAGS.format(
                 author=author,
                 title=post_name,
                 categories=format_categories(categories),
-                tags=",".join(ensure_list(tag)),
+                tags=",".join(ensure_list(tags)),
                 timestamp=timestamp.strftime(POSTNAME_DATETIME_FORMAT),
             )
 
