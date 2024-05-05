@@ -12,13 +12,16 @@ def main():
 @main.command("project")
 @click.option("--project-name", required=True)
 @click.option("--repo-name", required=True)
+@click.option("--owner", default="gxldcptrick")
 def create_project_cli(
     project_name: str,
     repo_name: str,
+    owner: str,
 ):
     create_project(
         project_name=project_name,
         repo_name=repo_name,
+        owner=owner,
     )
 
 
