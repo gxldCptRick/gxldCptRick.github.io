@@ -1,5 +1,6 @@
 import click
 
+from blog.post import create_post
 from blog.project import create_project
 
 
@@ -30,5 +31,11 @@ def create_post_cli(
     post_name: str,
     author: str,
     categories: str,
+    tags: list[str],
 ):
-    pass
+    create_post(
+        post_name=post_name,
+        author=author,
+        categories=categories,
+        tags=tags,
+    )
