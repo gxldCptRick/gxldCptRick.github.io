@@ -13,15 +13,18 @@ def main():
 @click.option("--project-name", required=True)
 @click.option("--repo-name", required=True)
 @click.option("--owner", default="gxldcptrick")
+@click.option("--technology", multiple=True, required=True)
 def create_project_cli(
     project_name: str,
     repo_name: str,
     owner: str,
+    technology: list[str],
 ):
     create_project(
         project_name=project_name,
         repo_name=repo_name,
         owner=owner,
+        technology=technology,
     )
 
 

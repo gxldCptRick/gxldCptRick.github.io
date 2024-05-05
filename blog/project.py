@@ -10,8 +10,9 @@ title: "{title}"
 permalink: /projects/{title_clean}
 repo-name: "{repo_name}"
 repo-link: "https://github.com/{owner}/{repo_name}"
+technology: [{technology}]
 ---
-## Overview
+Insert overview of project here...
 
 ## Languages and Tools
 
@@ -30,7 +31,9 @@ def create_file_name(project_title: str):
     return f"pages/_projects/{clean_project_title(project_title)}.markdown"
 
 
-def create_project(project_name: str, repo_name: str, owner: str):
+def create_project(
+    project_name: str, repo_name: str, owner: str, technology: list[str]
+):
     new_project_name = create_file_name(project_name)
     with open(new_project_name, "w") as fp:
         fp.write(
@@ -39,6 +42,7 @@ def create_project(project_name: str, repo_name: str, owner: str):
                 repo_name=repo_name,
                 owner=owner,
                 title_clean=clean_project_title(project_name),
+                technology=",".join(technology),
             )
         )
 
@@ -47,8 +51,14 @@ def create_project(project_name: str, repo_name: str, owner: str):
 @click.option("--project-name", required=True)
 @click.option("--repo-name", required=True)
 @click.option("--owner", default="gxldcptrick")
-def main(project_name: str, repo_name: str, owner: str):
-    create_project(project_name, repo_name, owner=owner)
+@click.option("--technology", multiple=True, required=True)
+def main(project_name: str, repo_name: str, owner: str, technology: list[str]):
+    create_project(
+        project_name,
+        repo_name,
+        owner=owner,
+        technology=technology,
+    )
 
 
 if __name__ == "__main__":

@@ -4,9 +4,8 @@
     permalink: /projects/linear-algebra-library
     repo-name: "LinearAlgebra"
     repo-link: "https://github.com/gxldcptrick/LinearAlgebra"
+    technology: ['c-sharp', 'dotnet-framework']
 ---
-## Overview
-
 This is an implementation of various concepts of from Linear Algebra it is used as the basis of being able to create a calculator for linear algebra to solve for different transformations and other various inputs and also to decompose a matrix in various ways. This is my first implementation that took inspiration from the courses I took at Neumont College of Computer Science.
 
 ## Languages and Tools
