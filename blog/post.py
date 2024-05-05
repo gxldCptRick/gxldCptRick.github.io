@@ -45,7 +45,7 @@ def ensure_list(item: Any):
     if isinstance(item, list):
         return item
     else:
-        
+
         try:
             iter(item)
             return list(item)
@@ -53,12 +53,7 @@ def ensure_list(item: Any):
             return [item]
 
 
-@click.command()
-@click.option("--post-name", required=True)
-@click.option("--author", default="Andres Hermilo Carrera Reynaga")
-@click.option("--categories", required=True)
-@click.option("--tags", multiple=True, required=True)
-def main(post_name: str, author: str, categories: str, tags: list[str]):
+def create_post(post_name: str, author: str, categories: str, tags: list[str]):
     timestamp = datetime.utcnow()
     new_page_name = create_file_name(post_name, timestamp)
     with open(new_page_name, "w") as fp:
@@ -78,6 +73,25 @@ def main(post_name: str, author: str, categories: str, tags: list[str]):
             )
 
         fp.write(out)
+
+
+@click.command()
+@click.option("--post-name", required=True)
+@click.option("--author", default="Andres Hermilo Carrera Reynaga")
+@click.option("--categories", required=True)
+@click.option("--tags", multiple=True, required=True)
+def main(
+    post_name: str,
+    author: str,
+    categories: str,
+    tags: list[str],
+):
+    create_post(
+        post_name=post_name,
+        author=author,
+        categories=categories,
+        tags=tags,
+    )
 
 
 if __name__ == "__main__":
