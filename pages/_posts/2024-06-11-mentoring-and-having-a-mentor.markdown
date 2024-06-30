@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mentoring and Having a Mentor"
-date: 2024-06-11 05:52:38 +0000
+date: 2024-06-29 05:52:38 +0000
 author: Andres Hermilo Carrera Reynaga
 categories: personal,thoughts
 tags: [mentorship, growth, self development]
