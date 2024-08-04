@@ -1,3 +1,6 @@
 _site/
 venv/
 __pycache__/
+.venv
+blog.egg-info/
+build/
