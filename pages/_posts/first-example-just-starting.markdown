@@ -1,5 +1,5 @@
 ---
-title: First Example Just STarting
+title: First Example Just Starting out
 layout: post
 date: 09/07/2024T11:31:00-0600
 author:
