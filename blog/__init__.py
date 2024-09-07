@@ -2,6 +2,7 @@ import click
 
 from blog.post import create_post
 from blog.project import create_project
+from blog.repair import DocumentKind, repair
 
 
 @click.group("blog")
@@ -45,3 +46,9 @@ def create_post_cli(
         categories=categories,
         tags=tags,
     )
+
+
+@main.command("repair")
+@click.option("--kind", "-k", required=True, type=click.Choice(DocumentKind))
+def repair_cli(kind: DocumentKind):
+    repair(kind)
