@@ -1,7 +1,7 @@
 ---
 title: First Example Just Starting out
 layout: post
-date: 09/07/2024T11:31:00-0600
+date: 2024-09-07T11:43:00-0600
 author:
   - Andres H. Carrera
   - Milo Carrera
