@@ -1,3 +1,4 @@
+import logging
 import click
 
 from blog.post import create_post
@@ -7,7 +8,7 @@ from blog.repair import DocumentKind, repair
 
 @click.group("blog")
 def main():
-    pass
+    logging.basicConfig(level="INFO")
 
 
 @main.command("project")
