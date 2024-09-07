@@ -1,11 +1,18 @@
 ---
-layout: post
-title: "Studying with Friends"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- Study
 date: 2024-04-16 22:08:30 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: Study
-tags: [Study,Group,Books,Learning]
+layout: post
+tags:
+- Study
+- Group
+- Books
+- Learning
+title: Studying with Friends
 ---
+
 I have been in a programming study group for a while now and I wanted to share the experiences I had with it. I wanted to talk about specifically exactly how we have learned to study with each other, The struggles we have to coordinate times across timezones, and figuring out a good way to help the group feel useful. I will trying my best to give you tips and tricks to have a fun effective study session if you ever do find yourself hosting or leading your own groups!!
 
 Study groups are hard because just like any other kind of club or group you have to juggle the schedules of multiple people. Some days I have been so busy that I wasn't able to meet with them and sometimes they were so busy they didn't have time to see me. Regardless we kept each other accountable and set ground rules for when our schedules would prevent us from showing up.

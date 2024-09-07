@@ -1,11 +1,19 @@
 ---
-layout: post
-title: "Testing with coverage using pytest-cov"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- python
+- testing
 date: 2024-03-03 15:58:01 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: python,testing
-tags: [python,testing,pytest,coverage]
+layout: post
+tags:
+- python
+- testing
+- pytest
+- coverage
+title: Testing with coverage using pytest-cov
 ---
+
 Today I want to share something I have been using for a while that I had discovered when I got my new job!! I didn't realize that you could instead of running coverage.py directly you could set it up so that pytest using a plugin could run coverage.py for you so that you can generate code coverage reports a little easier with a single command. This makes it quicker to add coverage reports to your build pipeline since all you need to do is install it into your pipeline and in a way that apparently is both faster and more detailed then what coverage.py could do out of the box!! Overall if you want to have coverage using plugins for your test runners will almost always be better then using a more generic service.
 
 To get started using it all you need to do is install the pytest-cov package using your package mangement tool. 

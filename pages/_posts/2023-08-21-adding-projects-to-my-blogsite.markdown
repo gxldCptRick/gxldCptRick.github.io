@@ -1,11 +1,17 @@
 ---
-layout: post
-title: "Adding Projects to My Blogsite"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- updates
 date: 2023-08-21 03:42:00 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: updates
-tags: [jekyll,python,project-update]
+layout: post
+tags:
+- jekyll
+- python
+- project-update
+title: Adding Projects to My Blogsite
 ---
+
 I was wondering how I could add projects to this site without having to add each and every entry into the navbar above and that is when I was able to push Jekyll to its fullest form. 
 
 I found out that with Jekyll you can create your own objects called collections that you can then define html for and use throughout your site after adding it to you config.
@@ -84,4 +90,4 @@ So now all I need to do is define a project file that uses my `project` layout a
 
 Now that I have a new file type I will probably be making frequently I can then create a template for it so I essentially copied the script for making posts and modified it so it can create projects instead. It is awesome and still follows the same simple idea where we have something figure out the path on disk and then write out a template of how I want my future project pages to look like so i can start with something instead of nothing. You should totally checkout the pages repo that powers this site when you get a chance so you can see the simple stuff I made to help me out with this. 
 
-Otherwise it that is all for today but I am happy to have learned more about blogging and building a site using jekyll. 
+Otherwise it that is all for today but I am happy to have learned more about blogging and building a site using jekyll.

@@ -1,11 +1,17 @@
 ---
-layout: post
-title: "Setting up a K8's cluster using KIND"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- devops docker k8s
 date: 2023-09-08 06:02:01 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: devops docker k8s
-tags: [infra,docker,k8s]
+layout: post
+tags:
+- infra
+- docker
+- k8s
+title: Setting up a K8's cluster using KIND
 ---
+
 Today we will be discussing K.I.N.D, a tool for being able to setup a kubernetes cluster inside a docker host.
 I will be exploring why someone would want to do that and what things you can do with a K.I.N.D cluster.
 

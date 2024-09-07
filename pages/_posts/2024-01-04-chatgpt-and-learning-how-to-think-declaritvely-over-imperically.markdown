@@ -1,11 +1,18 @@
 ---
-layout: post
-title: "ChatGPT and Learning how to Think declaritvely over imperically"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- dev
+- ai
 date: 2024-01-04 16:06:33 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: dev,ai
-tags: [ChatGPT,SQL,Declaritive Programming]
+layout: post
+tags:
+- ChatGPT
+- SQL
+- Declaritive Programming
+title: ChatGPT and Learning how to Think declaritvely over imperically
 ---
+
 I have recently started looking at what I can do with ChatGPT and one day I was struggling to understand how I would be able to write a query using on SQL to remove the rows in a table where I have this unique identifier but it had multiple rows using the same value. It wasn't an primary key column and it probably should have been so I had to prep the table to add a UNIQUE index in its place. After banging my head on it for a few hours a friend had the bright idea to use ChatGPT and funnily enough I was able to understand declarative programming and SQL way more because of it.
 
 When I put in my problem statement to ChatGPT I was suprised about how it went about doing the query. To me the problem was hard because the column in question was a foreign key to another table and I knew I wanted to keep the oldest reference to it which I was able to figure out because I had a column with a timestamp of when the record was created. The original way I was trying to do it was writing a script in an imperative languge, in this case python, and bascially create a read query to get the records that I have grouped by the foreign key and sorting the results on the timestamp and then pick the first record in the sorted list as the one to keep and issue a delete to remove the remaining records. Becuase I was so obsessed with needing to read the records in it never occured to me that another way I could write it without needing a read could be like.

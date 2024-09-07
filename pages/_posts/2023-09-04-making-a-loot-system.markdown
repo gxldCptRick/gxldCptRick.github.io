@@ -1,11 +1,17 @@
 ---
-layout: post
-title: "Making a loot system"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- updates
 date: 2023-09-04 04:46:40 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: updates
-tags: [python,game-dev,web-dev]
+layout: post
+tags:
+- python
+- game-dev
+- web-dev
+title: Making a loot system
 ---
+
 Heyyoo!! I haven't written in a while so I wanted to talk about some work I found myself doing for the Yugioh Card Puller project. It was really fun because it had to do with building out a system in which I would be able to have a weighted list of items and select one randomly where the weight was correlated with the likely hood they would be selected. 
 
 For example lets say I have a

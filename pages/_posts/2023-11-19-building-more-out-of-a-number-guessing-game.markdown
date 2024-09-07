@@ -1,11 +1,20 @@
 ---
-layout: post
-title: "Building More out of a Number Guessing Game"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- story
+- notes
 date: 2023-11-19 17:19:52 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: story,notes
-tags: [python,demo,coding,programming,web dev]
+layout: post
+tags:
+- python
+- demo
+- coding
+- programming
+- web dev
+title: Building More out of a Number Guessing Game
 ---
+
 Heyyoo,
 Today I wanted to talk about demos and what stuff you can build with some basic ideas. I had the thought the other day that if people use the number gussing game as a project code kata then what if we could push the kata further then just practicing how quickly one can actually create it. What if we could go even further beyond and make the app more fun to build. Then I had this thought about what if we could start with a number guessing game that is running on a single computer and then push it to run on multiple computers. Have it run as a web server where there could be multiple instances of it going. What if we could make it in such a way that all one would need to do is hit api endpoints to retrieve game state messages for the game they are playing. What if we could even push that even further and just expose the data flow for the game to be api endpoints that would be actions. Then someone could build an entire web app to connect to your web server and play number guessing games from where ever however they wanted to develop it. Granted because the code is so simple you might not ever wanna really use it but what if that is just a good enough reason to build it.
 

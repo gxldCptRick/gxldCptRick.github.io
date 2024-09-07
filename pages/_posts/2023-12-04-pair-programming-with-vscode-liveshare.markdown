@@ -1,10 +1,19 @@
 ---
-layout: post
-title: "Pair Programming with VSCode Liveshare"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- dev
+- tools
+- programming
 date: 2023-12-04 14:42:33 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: dev,tools,programming
-tags: [vscode, programming, tools, pair programming, collaboration]
+layout: post
+tags:
+- vscode
+- programming
+- tools
+- pair programming
+- collaboration
+title: Pair Programming with VSCode Liveshare
 ---
 
 Good Morning!! Today I wanted to talk about a wonderful tool I use to colloborate with my peers, VS Code Live Share. Live Share is a feature that allows you to expose your machine over the network using either github or microsoft to authenticate people logging in and joining you in a coding session. It is super nice for me because I work remote and so there are not a lot of options to be able to collab realtime with others. This gives me a nice way to virtually pass the keyboard to someone while I am on a video call so that they can help me out with tricky issues that would be exponentionally harder to just walk through with a screenshare while also allowing them to be able to increase the font size and poke around and explore.

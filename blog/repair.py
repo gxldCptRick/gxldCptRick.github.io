@@ -26,7 +26,7 @@ def fix_file(file_path: str, kind: DocumentKind):
 
 
 def fix_post(file_path):
-    with open(file_path, "rb") as fp:
+    with open(file_path, "r", encoding="utf-8") as fp:
         post = frontmatter.load(fp)
     author = post.metadata.get("author", [])
     if not isinstance(author, list):
@@ -34,6 +34,11 @@ def fix_post(file_path):
     if len(author) == 0:
         author.append("Andres Hermilo Carrera Reynaga")
     post.metadata["author"] = author
-    logger.info("Fixed and set author to list", extra=post.metadata)
+
+    categories = post.metadata.get("categories", ["unknown"])
+    if not isinstance(categories, list):
+        categories = categories.split(",")
+    post.metadata["categories"] = categories
+    logger.info("Fixed posts", extra=post.metadata)
     with open(file_path, "wb") as fp:
         frontmatter.dump(post, fp)

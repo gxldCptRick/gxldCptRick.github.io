@@ -1,18 +1,19 @@
 ---
-title: The stream that built a better website
-layout: post
-date: 2024-09-07T14:58:00-0600
 author:
-  - Andres H. Carrera
+- Andres H. Carrera
 categories:
-  - personal
+- personal
+date: 2024-09-07T14:58:00-0600
+layout: post
 tags:
-  - jekyll
-  - decap
-  - python
-  - devops
-  - cloudflare
+- jekyll
+- decap
+- python
+- devops
+- cloudflare
+title: The stream that built a better website
 ---
+
 This is a small story about the livestream I did while building out the website to be useful with its own admin portal for online editing of blog posts. It all started when I got the notification on my phone I had set to remind me to do my monthly blog post.
 
 It all started when I got my monthly notification to start writing the blog post. I knew then I didn't want to keep using my little python script and the vscode text editor to be able to type a whole bunch of things at once. So I wanted to see believing there must be a better way. I didn't know where to start but then I found this app called decap. Apparently it knows the formats that static site generators use and understands how to build apps for that. It is actually fucking crazy with the amount of options you can customize your templates for. You literally define where you put files down and it can not only format and save them for you but even allow you to edit existing ones!! This is great for me because I already have a years worth of posts that I have finished so this lets me enjoy the benefits of this editor on existing pages for making quick edits and doing some good stuff.

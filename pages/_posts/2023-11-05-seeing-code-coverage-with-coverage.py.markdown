@@ -1,10 +1,17 @@
 ---
-layout: post
-title: "Seeing Code Coverage with Coverage.py"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- python
+- testing
 date: 2023-11-05 16:29:26 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: python,testing
-tags: [python,testing,coverage,code analysis]
+layout: post
+tags:
+- python
+- testing
+- coverage
+- code analysis
+title: Seeing Code Coverage with Coverage.py
 ---
 
 Today I wanted to talk about Code Coverage. 

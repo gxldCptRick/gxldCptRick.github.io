@@ -1,11 +1,19 @@
 ---
-layout: post
-title: "Github Pages and Website Hosting through Github"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- Tutorial
+- Github
 date: 2024-05-05 20:16:12 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: Tutorial,Github
-tags: [Web Dev,Github,Web Hosting,Jekyll]
+layout: post
+tags:
+- Web Dev
+- Github
+- Web Hosting
+- Jekyll
+title: Github Pages and Website Hosting through Github
 ---
+
 Hosting static sites should be easy. It is just finding a  place to put down some html css and maybe some javascript to make it interesting. It shouldn't be a problem and yet it is. Most places charge a not insignificant amount of money to be able to host your site no matter how simple. This is where github comes in handy yet again. In this post we will be exploring using github pages to host static content that we want to serve for our projects maybe for docs or maybe for a personal blog like this one. It is a very quick and easy thing to do and hopefully this helps you in making your presence online that much better.
 
 More details on [github pages can be found here](https://pages.github.com/). To give a quick synopsis, github pages is a service that github provides to allow repos to serve static content. The cool thing is that they also allow end users to define a special repo with its own dedicated url for users of github to be able to host their own site to either describe them or even whatever you want really so long as you don't need any backend services running.

@@ -1,11 +1,17 @@
 ---
-layout: post
-title: "Controlling Builds on Private Networks using Self Hosted Github Runners"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- tutorial
 date: 2023-08-20 22:26:45 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: tutorial
-tags: [ci-cd,github,github-actions]
+layout: post
+tags:
+- ci-cd
+- github
+- github-actions
+title: Controlling Builds on Private Networks using Self Hosted Github Runners
 ---
+
 Because I just learned about githubs self hosted runners option I wanted to show yall how to actually get jobs up and running for your CI/CD pipelines and run them on your own runners.
 
 Quick Links

@@ -1,11 +1,16 @@
 ---
-layout: post
-title: "Styling your Github Profile using README.md"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- tutorial
 date: 2023-08-21 20:19:26 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: tutorial
-tags: [github,markdown]
+layout: post
+tags:
+- github
+- markdown
+title: Styling your Github Profile using README.md
 ---
+
 I wanted to look back on the work I did to design my github profile and share it so that hopefully even more poeple can come to learn how to customize their own profiles using markdown. This is a feature that you can use if you create a repository that is your github username. After that you just add a README.md markdown file and you can make it look however you wanted.
 
 ```markdown 

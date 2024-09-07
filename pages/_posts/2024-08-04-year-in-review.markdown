@@ -1,11 +1,17 @@
 ---
-layout: post
-title: "Year in Review"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- personal
 date: 2024-08-04 04:47:02 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: personal
-tags: [personal,dev,blogging]
+layout: post
+tags:
+- personal
+- dev
+- blogging
+title: Year in Review
 ---
+
 Howdy Readers!! Today I want to go over what I have learned in the year that I have spent trying to get something written out on paper for over a year haha. There has been so many different things. This year has been interesting and full of change haha. When I first started this blog I had been working in my first job out of college and struggling to find motivation to work and trying to figure out what I wanted to do with my life. Then in November I had moved on into a role that I feel in love with surrounded by smart driven people developing tools for scientests that all want to work on research to make the world a better place. I also met someone who is really cool and made me feel a lot better about love and life and finally allowed myself to get into more of my passions and began drawing and coloring again. But I want to talk about everything in this little post haha so please strap in and I hope you enjoy my musings.
 
 

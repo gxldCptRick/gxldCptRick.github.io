@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "Making a Python Script to Make Posts"
+author:
+- Andres Hermilo Carrera Reynaga
+categories:
+- tutorial
 date: 2023-08-20 06:27:20 +0000
-author: Andres Hermilo Carrera Reynaga
-categories: tutorial
-tags: [jekyll,python,scripting]
+layout: post
+tags:
+- jekyll
+- python
+- scripting
+title: Making a Python Script to Make Posts
 ---
 
 Today I will be covering a script I made to help me build posts on jenkins without having to remember as much which will be nice. I am working with python a lot so today I decided to write a script that can generate at template for me to start bulding the post headers and what not based on when I wanted to create the page
@@ -124,4 +129,3 @@ def main(post_name: str, author: str, categories: str):
 After using those functions then all we need to do is just use the template that was defined above as the content of the file so I don't have to do a lot of work and after that I have a great starting point to be able to then write the blog post that I was hoping to work on today!! 
 
 Let me know if any of this was helpful but I wanted to write down what I did for all the people who would be interested in working a little easier with jekyll
-
