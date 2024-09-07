@@ -1,0 +1,116 @@
+media_folder: pages/images/uploads
+public_folder: /images/uploads
+search: false
+backend:
+  name: github
+  branch: master
+  repo: gxldcptrick/gxldcptrick.github.io
+  base_url: https://auth.gxldcptrick.dev
+  commit_messages:
+    create: 'Addded to {{collection}}: “{{slug}}”'
+    update: 'Updating in {{collection}}: “{{slug}}”'
+    delete: 'Removing from {{collection}}: “{{slug}}”'
+    uploadMedia: 'Uploading file: “{{path}}”'
+    deleteMedia: 'Removing file: “{{path}}”'
+    openAuthoring: '{{author-login}}({{author-name}}): {{message}}'
+publish_mode: editorial_workflow
+site_url: https://blog.gxldcptrick.dev
+logo_url: https://blog.gxldcptrick.dev/favicon.png
+collections:
+  - name: posts
+    format: frontmatter
+    extension: markdown
+    label: Posts
+    description: Main Posts on site
+    folder: pages/_posts
+    create: true
+    summary: "{{author}}({{commit_author}}) [{{commit_date}}]: - {{title}}"
+    sortable_fields:
+      - title
+      - date
+      - author
+    view_filters:
+      - label: Milo's Posts
+        field: author
+        pattern: 'Andres'
+    view_groups:
+      - label: By Year
+        field: date
+        pattern: \d{4}
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: layout
+        label: Layout
+        widget: hidden
+        default: post
+      - name: date
+        label: Publish Date
+        widget: datetime
+        default: "{{now}}"
+        date_format: "MM/DD/YYYY"
+        time_format: "HH:mm:ssZZ"
+        picker_utc: false
+      - name: author
+        label: Author
+        widget: list
+        summary: "{{fields.name}}"
+        field: {label: Name, name: name, widget: string}
+        default: ['Andres H. Carrera']
+      - name: categories
+        label: Categories
+        widget: list
+        allow_add: true
+        default: []
+        max: 3
+      - name: tags
+        label: Tags
+        widget: list
+        allow_add: true
+        default: []
+      - name: body
+        label: Body
+        widget: markdown
+        hint: Main Content goes here
+
+  - name: projects
+    format: frontmatter
+    extension: markdown
+    label: Projects
+    description: Software Projects I wanted to talk about and Chat with
+    folder: pages/_projects
+    create: true
+    slug: "{{title}}"
+    summary: "{{author}}({{commit_author}}) [{{commit_date}}]: - {{title}}"
+    sortable_fields:
+      - title
+    fields:
+      - name: title
+        widget: string
+        label: Title
+      - name: layout
+        widget: hidden
+        default: project
+        Title: Layout
+      - name: permalink
+        widget: hidden
+        default: '/projects/{{slug}}'
+        title: Permalink
+      - name: repo-name
+        widget: string
+        title: Repo Name
+      - name: repo-link
+        widget: hidden
+        title: Repo Link
+        default: 'https://github.com/gxldcptrick/{{fields.repo-name}}'
+      - name: technology
+        widget: list
+        allow_add: true
+        default: []
+      - name: body
+        label: Body
+        widget: markdown
+        hint: Main Content goes here
+
+
