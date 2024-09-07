@@ -25,6 +25,7 @@ collections:
     folder: pages/_posts
     create: true
     summary: "{{author}}({{commit_author}}) [{{commit_date}}]: - {{title}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     sortable_fields:
       - title
       - date
@@ -49,7 +50,7 @@ collections:
         label: Publish Date
         widget: datetime
         default: "{{now}}"
-        date_format: "MM/DD/YYYY"
+        date_format: "YYYY-MM-DD"
         time_format: "HH:mm:ssZZ"
         picker_utc: false
       - name: author
