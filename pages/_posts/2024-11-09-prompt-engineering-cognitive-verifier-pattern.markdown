@@ -13,7 +13,9 @@ tags:
   - Programming-Patterns
   - Cognitive-Verifier
 ---
-This month I wanted to take some time and reflect on things I have learned in my masters program. I have been currently studying and trying to get my degree in
+This month I wanted to take some time and reflect on things I have learned in my masters program. I have been currently studying and trying to get my degree in AI Development. Most of this course has been me learning the fundamentals elements of what makes an LLM and what AI even is. With this I have learned a lot more about the theory without going into full detail of it and the legacy of the work that has been done. This month I want to go over one of those elements of Prompt Engineer specifically the Cognitive Verifier Pattern and how that can be used to create better responses from your LLM's that are more relevant and useful then just asking the question.
+
+The Cognitive Verifier Pattern is a Prompt Engineering pattern that is focused on getting the LLM to ask questions to build additional context before responding to a request.
 
 For additional information you I used these links to study and found them super useful:
 
