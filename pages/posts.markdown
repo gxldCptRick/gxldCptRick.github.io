@@ -7,13 +7,13 @@ permalink: /posts/
 <ul style="max-height: 12em; overflow: auto;">
   {% for tag in site.tags %}
     <li>
-        <a href="#{{tag[0]}}">{{tag[0] | capitalize}} ({{ tag[1] | size }})</a>
+        <a href="#{{tag[0] | slugify}}">{{tag[0] | capitalize}} ({{ tag[1] | size }})</a>
     </li>
   {% endfor %}
 </ul>
 
 {% for tag in site.tags %}
-  <h3 id="{{tag[0]}}">{{tag[0] | capitalize}} ({{ tag[1] | size }})</h3> 
+  <h3 id="{{tag[0] | slugify}}">{{tag[0] | capitalize}} ({{ tag[1] | size }})</h3> 
 
   <ul class="post-list">
     {% for post in tag[1] %}
