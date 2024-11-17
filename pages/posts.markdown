@@ -4,7 +4,7 @@ title: Posts by Tag
 permalink: /posts/
 ---
 <h2>Table of Contents</h2>
-<ul style="height: 12em; overflow: auto;">
+<ul style="max-height: 12em; overflow: auto;">
   {% for tag in site.tags %}
     <li>
         <a href="#{{tag[0]}}">{{tag[0] | capitalize}} ({{ tag[1] | size }})</a>

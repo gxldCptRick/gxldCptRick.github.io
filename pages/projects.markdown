@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 <h2>Table of Contents</h2>
-<ul style="height: 12em; overflow: auto;">
+<ul style="max-height: 12em; overflow: auto;">
     {% for project in site.projects %}
       <li>
         <a href="#{{post.permalink}}">{{project.title}}</a>
