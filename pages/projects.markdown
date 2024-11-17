@@ -3,6 +3,15 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
+<h2>Table of Contents</h2>
+<ul style="height: 12em; overflow: auto;">
+    {% for project in site.projects %}
+      <li>
+        <a href="#{{post.permalink}}">{{project.title}}</a>
+      </li>
+    {%- endfor -%}
+</ul>
+
 <ul class="post-list">
 {% for project in site.projects %}
 <li>
