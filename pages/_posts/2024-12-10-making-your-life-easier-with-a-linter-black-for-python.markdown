@@ -42,3 +42,5 @@ If you would like to learn more about linting please consider reading [more here
 That is a link to the black style guide and exactly what it means for your python with example outputs to give you a good idea of how things get wrapped and changed.
 
 If you need more inspiration or reasoning you should check out this [Sonar article](https://www.sonarsource.com/learn/why-linter/)
+
+[](https://www.sonarsource.com/learn/why-linter/)Regardless I hope you consider trying out some kind of linter next time you program in any language or at least appreciate the formatter that is built into your ide more.[](https://www.sonarsource.com/learn/why-linter/)
