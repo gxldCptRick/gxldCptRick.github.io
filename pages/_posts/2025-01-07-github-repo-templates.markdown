@@ -58,5 +58,5 @@ The following are some resources I pulled from to help me understand repo templa
 ### Great Videos on the Subject
 
 - [Quickly start new projects with Github template repositories by  IO - Technology](https://www.youtube.com/watch?v=zCKwIApdNXw&ab_channel=iO-Technology)
-- [#21 Template Repository on Github | Effortlessly Create Multiple Repositories in Single Click by Automation eLearn](https://www.youtube.com/watch?v=3nm-DgqKE6I&ab_channel=AutomationeLearn)
+- [#21 Template Repository on Github, Effortlessly Create Multiple Repositories in Single Click by Automation eLearn](https://www.youtube.com/watch?v=3nm-DgqKE6I&ab_channel=AutomationeLearn)
 - [Use Github Project templates to share Projects practices amongst your teams by Github](https://www.youtube.com/watch?v=0bpk3iOM7CI&ab_channel=GitHub)
