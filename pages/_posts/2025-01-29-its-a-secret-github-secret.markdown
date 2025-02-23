@@ -13,4 +13,4 @@ tags:
   - automation
   - security
 ---
-The world is scary and we need to keep secrets.
+I am going to murder who ever wrote this for not implementing an autosave feature.
