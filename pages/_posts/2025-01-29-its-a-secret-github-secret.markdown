@@ -55,4 +55,28 @@ Then just click the button and then set the key and value as the secret. And you
 
 ## Using them in Actions
 
-Using github secrets in your actions is really easy. They scope
+Using github secrets in your actions is really easy. We expose them with the `secrets` interpolation variable exposed in your actions.
+
+```yaml 
+jobs:
+  publish-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Docker Login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          target: runner
+          tags: |
+            ${{ env.IMAGE_NAME }}
+            ${{ env.LATEST_IMAGE_NAME }}
+```
