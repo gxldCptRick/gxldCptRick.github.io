@@ -83,3 +83,5 @@ jobs:
             ${{ env.LATEST_IMAGE_NAME }}
 # ... Other jobs you have run when you want to publish things ...
 ```
+
+As you can see you just use `secrets`.`VARIABLE_NAME` as you wrote it in the form to create your variable and then you will pull the secret if your action has been granted access. This allows you to easily build your workflows without needing to have everything set yet but it does also mean that figuring out what config you didn't set is a bit of a pain especially with simple typos but that is a problem for another day and a thing you can configure your ide to try and help you see.
