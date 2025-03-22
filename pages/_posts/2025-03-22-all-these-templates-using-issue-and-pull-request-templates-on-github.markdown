@@ -1,7 +1,7 @@
 ---
 title: "All These Templates: Using Issue and Pull Request Templates on Github"
 layout: post
-date: 2025-03-21T20:21:00-0600
+date: 2025-03-21T20:34:00-0600
 author:
   - Andres H. Carrera
 categories:
