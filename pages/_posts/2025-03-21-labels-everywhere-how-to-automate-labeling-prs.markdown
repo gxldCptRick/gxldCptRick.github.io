@@ -1,7 +1,7 @@
 ---
 title: Labels Everywhere, How to Automate Labeling PRs
 layout: post
-date: 2025-02-23T10:52:00-0700
+date: 2025-03-21T10:52:00-0700
 author:
   - Andres H. Carrera
 categories:
