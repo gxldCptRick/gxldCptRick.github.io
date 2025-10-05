@@ -27,26 +27,32 @@ layout: default
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <ul class="post-list">
-      {%- for post in posts -%}
-      <li id="{{post.slug}}">
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        <p style="display: flex; justify-content: left; gap: 10px;"> 
-            {%- for tag in post.tags -%}
-            <a href="/posts/#{{tag}}">#{{ tag }}</a>
-            {%- endfor -%}
-        </p>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+    <div class="smart-list">
+      <input class="search" placeholder="Search for post..." />
+
+      <ul class="post-list">
+        {%- for post in posts -%}
+        <li id="{{post.slug}}">
+          <span class="post-meta date">{{ post.date | date: date_format }}</span>
+          <h3 class="title">
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          <p style="display: flex; justify-content: left; gap: 10px;"> 
+              {%- for tag in post.tags -%}
+              <a href="/posts/#{{tag}}">#{{ tag }}</a>
+              {%- endfor -%}
+          </p>
+          {%- if site.show_excerpts -%}
+            <span class="excerpt">
+              {{ post.excerpt }}
+            </span>
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
 
     {% if site.paginate %}
       <div class="pager">
@@ -69,3 +75,21 @@ layout: default
   {%- endif -%}
 
 </div>
+<script type="text/html" id="post-template">
+  <li>
+    <span class="post-meta date"></span>
+    <h3 class="title"></h3>
+    <span class="excerpt"></span>
+  </li>
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const listJSOptions = {
+      valueNames: ['date', 'title', 'excerpt'],
+      item: 'post-template',
+      listClass: "post-list"
+    }
+    var postList = new List("smart-list", listJSOptions);
+    console.log(postList.size())
+  });
+</script>
